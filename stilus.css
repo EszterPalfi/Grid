@@ -1,0 +1,147 @@
+main,
+header,
+footer,
+article,
+aside,
+nav,
+section,
+div {
+  border: 1px solid rgb(255, 255, 255);
+  padding: 10px;
+}
+
+body {
+  background-image: url(kepek/hatter.jpg);
+  background-size: cover;
+  margin: auto;
+  color: white;
+  text-align: justify;
+}
+
+header {
+  color: rgb(95, 212, 212);
+}
+
+nav {
+  background-color: rgb(64, 122, 122);
+}
+
+section.szoveg{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+section.kepek{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+div{
+  padding: 10px;
+}
+
+img{
+    width: 100%;
+}
+
+nav ul {
+  display: grid;
+  grid-template-columns: 10% 10% 10% 10% 10%;
+  list-style-type: none;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: yellow;
+}
+
+nav ul li {
+  text-decoration: none;
+}
+
+nav ul li:hover {
+  background-color: rgb(105, 166, 170);
+}
+
+/* oldal szerkezet kialakítása */
+main {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:
+    "h h h"
+    "n n n"
+    "asb ar asj"
+    "f f f";
+}
+
+header {
+  grid-area: h;
+}
+nav {
+  grid-area: n;
+}
+
+article {
+  grid-area: ar;
+}
+
+aside.bal {
+  grid-area: asb;
+}
+aside.jobb {
+  grid-area: asj;
+}
+footer {
+  grid-area: f;
+}
+
+@media screen and (max-width: 800px) {
+    nav ul {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "h"
+      "n"
+      "asb"
+      "ar"
+      "asj"
+      "f";
+  }
+
+  section.kepek{
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  nav ul {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "h"
+      "n"
+      "asb"
+      "ar"
+      "asj"
+      "f";
+  }
+
+  section.szoveg{
+    grid-template-columns: 1fr;
+  }
+
+  section.kepek{
+    grid-template-columns: 1fr;
+  }
+}
+
+
